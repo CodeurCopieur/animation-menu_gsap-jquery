@@ -1,0 +1,154 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+/*===== BASE =====*/
+*,::before,::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #EEE;
+  background:linear-gradient(135deg, #039be5 0%, #01579b 100%);
+  font-family: 'Poppins', sans-serif;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+
+
+
+header {
+  height: 100vh;
+  padding: 2rem 1rem;
+  position: relative;
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 40px;
+
+    .hamburger {
+      width: 5rem;
+      position: relative;
+      cursor: pointer;
+      padding: .75em;
+
+      .line{
+        width: 100%;
+        height: 3px;
+        border-radius: 10px;
+        background-color: #D9B166;
+        position: absolute;
+        display: block;
+        right: 0;
+        transition: all 480ms;
+      }
+
+      .line:first-child {
+        top: 0;
+      }
+
+      .line:nth-child(2) {
+        top: 50%;
+        margin-top: -1px;
+        width: 3.5rem;
+      }
+
+      .line:nth-child(3) {
+        top: 100%;
+        margin-top: -2px;
+        width: 2rem;
+      }
+
+      //Toggle Icone Hamburger
+      &.is-active {
+
+        .line{
+          width: 40px;
+        }
+
+        .line:first-child {
+          transform: rotate(45deg);
+          top: 40%;
+          height: 5px;
+        }
+
+        .line:nth-child(2) {
+          opacity: 0;
+        }
+
+        .line:nth-child(3) {
+          transform: rotate(135deg);
+          top: 47%;
+          height: 5px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px){
+    nav {
+      margin: 0 20px;
+    }
+  }
+
+  .wrapper__title{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   
+
+    h1 {
+      font-size: 10rem;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+    
+    @media screen and (max-width: 768px){
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  
+
+  .menu {
+    position: absolute;
+    background:linear-gradient(135deg, #01579b 0%, #039be5 100%);
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    top: 0;
+
+    ul {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      li {
+        padding-bottom: 30px;
+
+        a {
+          color: #D9B166;;
+          font-size: 30px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    @media screen and (max-width: 768px){
+      ul {
+        width: 80%;
+      }
+    }
+  }
+}
