@@ -19,6 +19,7 @@ $(document).ready( function(){
   $(document).on('click', 'a', function(e){
     e.preventDefault();
     timeline.reverse();
+    $('.hamburger').toggleClass('is-active');
   })
 
 })
